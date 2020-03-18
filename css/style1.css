@@ -175,3 +175,47 @@ footer{
 }
 
 
+
+
+@media all and (min-width: 800px){
+
+  .container{
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 15px;
+    text-align: center;
+    padding: 20px;
+
+  }
+
+  .introtext{
+    grid-column: 1/ span 2;
+  }
+
+
+
+
+  .me{
+
+    grid-column: 3/ span 2;
+    padding: 30px;
+
+}
+  .flipcard{
+    width:50%;
+
+  }
+
+  #project1{
+    grid-column: 1/ span 2;
+  }
+
+  #project2{
+    grid-column: 2/ span 3;
+   
+  }
+}
+
+
+
