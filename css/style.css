@@ -38,7 +38,7 @@ header{
 .nav_links{
   display: flex;
   flex-direction: row;
-  font-size: 15px;
+  font-size: 25px;
   list-style-type: none;
   align-items: center;
   justify-content: space-between;
@@ -64,6 +64,7 @@ header{
 }
 
 a:link{
+  color: black;
   text-decoration: underline;
 }
 

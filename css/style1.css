@@ -64,22 +64,78 @@ header{
 }
 
 a:link{
+  color:black;
   text-decoration: underline;
 }
 
 a:visited{
-  color:#85ACE6;
+  color:black;
   font-weight: bold;
 }
 
 a:hover {
-  color: #85ACE6;
-  font-weight: bold;
+  background-color: #85ACE6;
+  color: black;
+}
+
+
+@-webkit-keyframes logo_wiggle{
+  from {
+    width: 200px;
+  }
+  to{
+    width: 420px;
+  }
+}
+
+
+@keyframes logo_wiggle{
+  from{
+    width: 200px;
+  }
+  to{
+    width: 420px;
+  }
+}
+
+
+  #logo{
+  -webkit-animation-name: logo_wiggle;
+          animation-name: logo_wiggle;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+  position: absolute;
+  margin-top: -500px;
+}
+
+
+
+.skip a:focus{
+  margin-top: 0px;
+  margin-left:0px;
+
+}
+
+*:focus{
+  border:2px solid black;
+
 }
 
 .container{
   display: grid;
-  grid-template-columns: 100px 200px 2 100px;
+  grid-template-columns: 100px 200px 200px 100px;
   grid-template-rows: 30px auto auto auto auto auto 100px;
   grid-row-gap:15px;
 }
@@ -93,34 +149,38 @@ a:hover {
   padding: 20px;
 }*/
 
-.introtext, .me, {
+.me{
   grid-column:1/-1;
   max-height: 700px;
   overflow: hidden;
 
 }
 
+.introtext{
+  grid-column: 1/-1;
+}
+
 #project1, #project2{
-  grid-column:1/-1;
+  grid-column:1/span 2;
   max-height: 700px;
   overflow: hidden;
 }
 
 .introtext{
-  grid-row: 2/ 3;
+  grid-row: 1/ 3;
 }
 
 .me{
-  grid-row: 2/ 3;
+  grid-row: 3/ 4;
 
 }
 
 #project1{
-  grid-row:3/ span 1;
+  grid-row:4/ span 1;
 }
 
 #project2{
-  grid-row: 4/ span 1;
+  grid-row: 5/ span 1;
 }
 
 .flip-card {
@@ -148,6 +208,7 @@ a:hover {
 
 
 .flip-card-front, .flip-card-back {
+  background-color: #CCCCFF;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -175,9 +236,16 @@ footer{
 }
 
 
+.current{
+
+  background-color: #85ACE6;
+  color: black;
+
+}
 
 
-@media all and (min-width: 800px){
+
+@media screen and (min-width: 800px){
 
   .container{
 
@@ -190,18 +258,17 @@ footer{
   }
 
   .introtext{
-    grid-column: 1/ span 2;
+    grid-column: 1/ -1;
   }
-
-
 
 
   .me{
 
-    grid-column: 3/ span 2;
+    grid-column: 2/ span 2;
     padding: 30px;
 
 }
+
   .flipcard{
     width:50%;
 
@@ -213,9 +280,19 @@ footer{
 
   #project2{
     grid-column: 2/ span 3;
-   
   }
+
+  #logo{
+  display: block;
+  align-self: left;
+  }
+   
 }
 
+@media (prefers-reduced-motion:reduce){
 
+  #logo{
+    animation: none;
+  }
+}
 
